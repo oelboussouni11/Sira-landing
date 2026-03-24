@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1F2937;
+  background: #fff;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ─── Cards ─── */
+.sira-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sira-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.1);
+}
+
+/* ─── Buttons ─── */
+.sira-btn {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.sira-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+}
+.sira-btn:active {
+  transform: translateY(-1px);
+}
+
+/* ─── Links ─── */
+.sira-link {
+  transition: color 0.2s, transform 0.2s;
+}
+.sira-link:hover {
+  color: #2488C6 !important;
+}
+
+/* ─── Grids ─── */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ─── Glow orb float animation ─── */
+.glow-orb {
+  animation: floatOrb 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15px, -20px) scale(1.05); }
+  100% { transform: translate(-10px, 10px) scale(0.97); }
+}
+
+/* ─── Pulse dot ─── */
+.pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34, 201, 109, 0.4); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(34, 201, 109, 0); }
+}
+
+/* ─── Decorative rings ─── */
+.hero-ring {
+  animation: ringFloat 12s ease-in-out infinite alternate;
+}
+
+@keyframes ringFloat {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(20px, -15px) rotate(8deg); }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-4,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 44px !important;
+  }
+  .section-pad {
+    padding: 72px 20px !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+  }
+  .feature-row {
+    flex-direction: column !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .hero-cards {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .cta-btns {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .hero-ring {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 36px !important;
+  }
+}
