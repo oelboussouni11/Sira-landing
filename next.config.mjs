@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig = {
   output: "export",
-  basePath: "/Sira-landing",
+  basePath: isProd ? "/Sira-landing" : "",
+  assetPrefix: isProd ? "/Sira-landing/" : "",
   images: {
     unoptimized: true,
   },
